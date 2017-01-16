@@ -1,0 +1,41 @@
+.Experience {
+    flex: 1 0 auto;
+    border: 8px solid #ffffff;
+    margin: 0 5px 20px;
+    max-width: 609px;
+    width: 100%;
+}
+
+.Experience > p {
+    margin: 10px 0 0 0;
+}
+
+.Experience-image-container {
+    height: 300px;
+    width: 100%;
+    position: relative;
+    background-color: #74AFAD;
+}
+
+.Experience-image-container:hover {
+    cursor: pointer;
+}
+
+.Experience-image-container img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.Experience-title,
+.Experience-location,
+.Experience-duration,
+.Experience-description,
+.Experience-position {
+    text-align: center;
+}

@@ -1,0 +1,26 @@
+.SideBySideSection {
+    display: flex;
+    margin: 0 0 20px 0;
+}
+
+
+.SideBySideSection:first-child {
+    margin-top: 20px;
+}
+
+.SideBySideSection > h2 {
+    flex: 1 1 0;
+    align-self: flex-start;
+    text-align: center;
+    margin: 0 0 0 6%;
+    font-weight: 100;
+}
+
+.SideBySideSection-content {
+    flex: 2 1 0;
+    margin: 0 6%;
+}
+
+.SideBySideSection-content * {
+    color: #000000;
+}
