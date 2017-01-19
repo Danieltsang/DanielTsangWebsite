@@ -21,6 +21,10 @@
     margin: 0 6%;
 }
 
+.SideBySideSection-content > ul {
+    padding: 0;
+}
+
 .SideBySideSection-content * {
-    color: #000000;
+    color: #454545;
 }

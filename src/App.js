@@ -52,10 +52,6 @@ class App extends Component {
                             <Glyphicon glyph="list-alt" style={glyphiconStyles} />
                             Experiences
                         </h3>
-                        <h3 className="App-header-button" onClick={this.scrollSectionIntoView.bind(this, "education")}>
-                            <Glyphicon glyph="send" style={glyphiconStyles} />
-                            Contact me!
-                        </h3>
                     </div>
                 </div>
                 <div className="App-intro">
@@ -68,10 +64,11 @@ class App extends Component {
                 </div>
                 <div className="App-body">
                     <SideBySideSection title="About me" ref={(node) => this.setReference(node, "aboutMe")}>
-                        <p>My name is <b>Daniel Tsang</b> and I'm a Front End Engineer living in Vancouver, BC.</p>
-                        <p>I have a strong interest in the front end of web and mobile.</p>
-                        <p>I constantly look to explore new technologies and trends to build awesome things.</p>
-                        <p>I finish my undergraduate degree in <b>April 2017</b> so I'm actively seeking an amazing company to begin my career with.</p>
+                        <p>Who: Daniel Tsang</p>
+                        <p>What: Front End Engineer</p>
+                        <p>Where: Vancouver, BC</p>
+                        <p>When: I graduate in April 2017</p>
+                        <p>Why: I constantly look to explore new technologies and trends to build awesome things</p>
                     </SideBySideSection>
                     <SideBySideSection title="Skills" ref={(node) => this.setReference(node, "skills")}>
                         <ul>
@@ -106,6 +103,12 @@ class App extends Component {
                                 title="Indochino"
                             />
                         </div>
+                    </div>
+                    <div className="App-contact">
+                        <a href="mailto:danieltsang94@gmail.com">
+                            <Glyphicon glyph="send" style={{fontSize: '30px', margin: "0 5px 0 0"}} />
+                            Contact me!
+                        </a>
                     </div>
                 </div>
             </div>

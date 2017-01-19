@@ -1,7 +1,6 @@
 .App {
     display: flex;
     flex-direction: column;
-    background-color: #ECECEA;
     color: #60918f;
 }
 
@@ -49,9 +48,6 @@
 
 .App-header-button {
     border-radius: 5px;
-}
-
-.App-header-button {
     cursor: pointer;
 }
 
@@ -97,6 +93,20 @@
     justify-content: center;
 }
 
+.App-contact {
+    display: flex;
+    justify-content: center;
+}
+
+.App-contact > a {
+    border-radius: 5px;
+    cursor: pointer;
+    color: #60918f;
+    background: #e0ebe8;
+    font-size: 30px;
+    padding: 20px;
+    margin: 0 0 20px 0;
+}
 
 /*@keyframes App-logo-spin {*/
   /*from { transform: rotate(0deg); }*/
