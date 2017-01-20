@@ -1,8 +1,8 @@
 .Experience {
-    flex: 1 0 auto;
+    flex: 1 1 354px;
     border: 8px solid #ffffff;
     margin: 0 5px;
-    max-width: 609px;
+    max-width: 354px;
     width: 100%;
 }
 
@@ -11,7 +11,7 @@
 }
 
 .Experience-image-container {
-    height: 300px;
+    height: 200px;
     width: 100%;
     position: relative;
     background-color: #e0ebe8;

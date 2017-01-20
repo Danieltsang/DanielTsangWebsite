@@ -103,7 +103,7 @@ class App extends Component {
                     ref={(node) => this.setReference(node, "skills")}
                     orientation="row"
                 >
-                    <p>Vanilla Javascript,</p>
+                    <p>Javascript,</p>
                     <p>React,</p>
                     <p>jQuery,</p>
                     <p>HTML,</p>
@@ -171,10 +171,15 @@ class App extends Component {
     renderFooter () {
         return (
             <div className="App-footer">
-                <p>Icon Credits:</p>
-                <div>Icons made by <a href="http://www.flaticon.com/authors/papedesign" title="Papedesign">Papedesign</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
-                <div>Icons made by <a href="http://www.flaticon.com/authors/madebyoliver" title="Madebyoliver">Madebyoliver</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
-                <div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+                <div className="App-social-networks">
+                    <a href="https://ca.linkedin.com/in/daniel-tsang-36730a80">LinkedIn</a>
+                </div>
+                <div className="App-icon-credits">
+                    <p>Icon Credits:</p>
+                    <div>Icons made by <a href="http://www.flaticon.com/authors/papedesign" title="Papedesign">Papedesign</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+                    <div>Icons made by <a href="http://www.flaticon.com/authors/madebyoliver" title="Madebyoliver">Madebyoliver</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+                    <div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+                </div>
             </div>
         )
     }

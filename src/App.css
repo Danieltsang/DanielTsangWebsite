@@ -109,6 +109,7 @@
 .App-contact {
     display: flex;
     justify-content: center;
+    align-items: center;
     margin: 40px;
     flex-direction: column;
 }
@@ -139,9 +140,33 @@
 }
 
 .App-footer {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
     background-color: #e0ebe8;
     padding: 30px;
     margin: 20px 0 0 0;
+}
+
+.App-social-networks {
+    margin: 0 0 20px 0;
+}
+
+.App-social-networks > a {
+    color: #60918f;
+}
+
+.App-social-networks > a:hover {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.App-icon-credits,
+.App-icon-credits p,
+.App-icon-credits a {
+    margin: 0;
+    text-align: center;
+    color: rgba(128, 128, 128, 0.31);
 }
 
 .row {
