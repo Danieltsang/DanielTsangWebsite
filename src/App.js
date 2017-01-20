@@ -65,6 +65,7 @@ class App extends Component {
                         <p>Why: New trends and technologies keep the front end landscape super engaging and fascinating</p>
                         <p>Where: Beautiful Vancouver, British Columbia, Canada</p>
                     </SideBySideSection>
+                    <div className="App-divider"></div>
                     <SideBySideSection title="Skills" ref={(node) => this.setReference(node, "skills")}>
                         <ul>
                             <li>Vanilla Javascript</li>
@@ -78,6 +79,7 @@ class App extends Component {
                             <li>Jasmine</li>
                         </ul>
                     </SideBySideSection>
+                    <div className="App-divider"></div>
                     <div className="App-experience" ref={(node) => this.setReference(node, "experience")}>
                         <h2>Experiences</h2>
                         <div className="App-experience-container">
@@ -99,6 +101,7 @@ class App extends Component {
                             />
                         </div>
                     </div>
+                    <div className="App-divider"></div>
                     <div className="App-contact" ref={(node) => this.setReference(node, "contact")}>
                         <h1>I have what it takes to be a great employee</h1>
                         <p>I look to begin my career as a Front End Engineer from May 2017 and onwards.</p>

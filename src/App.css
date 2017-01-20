@@ -20,7 +20,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #e0ebe8;
+    background-color: #FFFFFF;
     height: 100%;
     padding: 20px 11% 10px;
 }
@@ -82,7 +82,7 @@
 
 .App-experience {
     display: flex;
-    margin: 60px 0;
+    margin: 5% 0;
 }
 
 .App-experience {
@@ -104,7 +104,7 @@
 .App-contact {
     display: flex;
     justify-content: center;
-    margin: 60px;
+    margin: 5%;
     flex-direction: column;
 }
 
@@ -125,6 +125,12 @@
     padding: 20px;
     margin: auto;
     text-align: center;
+}
+
+.App-divider {
+    margin: 0 5%;
+    max-width: 100%;
+    border: 1px solid #acacac;
 }
 
 /*@keyframes App-logo-spin {*/
