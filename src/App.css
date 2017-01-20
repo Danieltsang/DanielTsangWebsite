@@ -40,17 +40,17 @@
     align-self: flex-end;
     cursor: pointer;
     color: #60918f;
-    font-size: 30px;
+    font-size: 20px;
     padding: 20px;
     font-weight: 100;
     margin: 0;
-    line-height: 30px;
+    line-height: 20px;
     outline: 0;
 }
 
 .App-header-button:hover {
     color: #23527c;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .App-body {
@@ -60,7 +60,10 @@
 }
 
 .App-intro {
-    background-color: #e0ebe8;
+    background: url("./images/van-background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -72,12 +75,9 @@
     font-size: 70px;
     font-weight: 100;
     text-align: center;
-}
-
-.App-intro > .glyphicon:hover {
-    color: #23527c;
-    text-decoration: underline;
-    cursor: pointer;
+    color: #000000;
+    background-color: rgba(255, 255, 255, 0.52);
+    padding: 10px;
 }
 
 .App-experience {
@@ -92,6 +92,7 @@
 .App-experience > h2 {
     text-align: center;
     font-weight: 100;
+    margin: 0;
 }
 
 .App-experience-container {
@@ -131,6 +132,18 @@
     margin: 0 5%;
     max-width: 100%;
     border: 1px solid #acacac;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.svg {
+    width: 150px;
+    height: auto;
+    text-align: center;
 }
 
 /*@keyframes App-logo-spin {*/
