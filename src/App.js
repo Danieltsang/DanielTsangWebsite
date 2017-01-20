@@ -36,8 +36,7 @@ class App extends Component {
     render () {
         const glyphiconStyles = {
             fontSize: "30px",
-            margin: "0 8px 0 0",
-            color: "#000000"
+            margin: "0 8px 0 0"
         };
         return (
             <div className="App">
@@ -65,7 +64,7 @@ class App extends Component {
                 </div>
                 <div className="App-body">
                     <SideBySideSection title="Who Am I?" ref={(node) => this.setReference(node, "aboutMe")}>
-                        <p>Hi! My name is Daniel Tsang and I am an undergraduate at the University of British Columbia graduating in May 2017. Currently, I am searching for a job as a Front End Engineer in the Big Apple. The combination of the growing tech industry and my passion for coding invigorates me to travel from Vancouver, Canada to New York to kickoff my career.</p>
+                        <p>Hi! My name is Daniel Tsang and I am an undergraduate at the University of British Columbia graduating in May 2017. Currently, I am searching for a job as a Front End Engineer in the Big Apple. The combination of the growing tech industry and my passion for coding invigorates me to kickoff my career in New York. If you have some tips or an opportunity available, please feel free to contact me!</p>
                     </SideBySideSection>
                     <div className="App-divider"></div>
                     <div className="App-experience" ref={(node) => this.setReference(node, "experience")}>
@@ -90,32 +89,23 @@ class App extends Component {
                         </div>
                     </div>
                     <div className="App-divider"></div>
-                    <SideBySideSection title="What Can I Do?" ref={(node) => this.setReference(node, "skills")}>
-                        <ul>
-                            <li>Vanilla Javascript</li>
-                            <li>React</li>
-                            <li>jQuery</li>
-                            <li>HTML</li>
-                            <li>CSS</li>
-                            <li>LESS</li>
-                            <li>PHP</li>
-                            <li>Java</li>
-                            <li>Jasmine</li>
-                        </ul>
-                    </SideBySideSection>
-                    <div className="App-divider"></div>
-                    <SideBySideSection title="What Do I Do Well?" ref={(node) => this.setReference(node, "skills")}>
-                        <ul>
-                            <li>Adapt</li>
-                            <li>Work Independently</li>
-                            <li>Dedication</li>
-                        </ul>
-                    </SideBySideSection>
-                    <div className="App-divider"></div>
-                    <SideBySideSection
-                        title="What Do I Like?"
+                    <SideBySideSection 
+                        title="What Can I Do?" 
                         ref={(node) => this.setReference(node, "skills")}
+                        orientation="row"
                     >
+                            <p>Vanilla Javascript,</p>
+                            <p>React,</p>
+                            <p>jQuery,</p>
+                            <p>HTML,</p>
+                            <p>CSS,</p>
+                            <p>LESS,</p>
+                            <p>PHP,</p>
+                            <p>Java,</p>
+                            <p>Jasmine</p>
+                    </SideBySideSection>
+                    <div className="App-divider"></div>
+                    <SideBySideSection title="What Do I Like?" ref={(node) => this.setReference(node, "skills")}>
                         <div className="row">
                             <div className="svg">
                                 <ResponsiveEmbed a16by9>
