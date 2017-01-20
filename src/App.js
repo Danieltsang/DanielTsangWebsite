@@ -28,8 +28,8 @@ class App extends Component {
 
     render () {
         const glyphiconStyles = {
-            fontSize: "21px",
-            margin: "0 5px 0 0"
+            fontSize: "30px",
+            margin: "0 8px 0 0"
         };
         return (
             <div className="App">
@@ -40,17 +40,13 @@ class App extends Component {
                         </div>
                     </div>
                     <div className="App-header-right">
-                        <h3 className="App-header-button" onClick={this.scrollSectionIntoView.bind(this, "aboutMe")}>
-                            <Glyphicon glyph="user" style={glyphiconStyles} />
-                            About
-                        </h3>
-                        <h3 className="App-header-button" onClick={this.scrollSectionIntoView.bind(this, "skills")}>
+                        <a href="https://github.com/Danieltsang?tab=repositories" className="App-header-button">
                             <Glyphicon glyph="wrench" style={glyphiconStyles} />
-                            Skills
-                        </h3>
-                        <h3 className="App-header-button" onClick={this.scrollSectionIntoView.bind(this, "experience")}>
-                            <Glyphicon glyph="list-alt" style={glyphiconStyles} />
-                            Experiences
+                            Work
+                        </a>
+                        <h3 className="App-header-button" onClick={this.scrollSectionIntoView.bind(this, "contact")}>
+                            <Glyphicon glyph="send" style={glyphiconStyles} />
+                            Contact
                         </h3>
                     </div>
                 </div>
@@ -66,21 +62,20 @@ class App extends Component {
                     <SideBySideSection title="About me" ref={(node) => this.setReference(node, "aboutMe")}>
                         <p>Who: Daniel Tsang</p>
                         <p>What: Front End Engineer</p>
-                        <p>Where: Vancouver, BC</p>
-                        <p>When: I graduate in April 2017</p>
-                        <p>Why: I constantly look to explore new technologies and trends to build awesome things</p>
+                        <p>Why: New trends and technologies keep the front end landscape super engaging and fascinating</p>
+                        <p>Where: Beautiful Vancouver, British Columbia, Canada</p>
                     </SideBySideSection>
                     <SideBySideSection title="Skills" ref={(node) => this.setReference(node, "skills")}>
                         <ul>
                             <li>Vanilla Javascript</li>
                             <li>React</li>
                             <li>jQuery</li>
-                            <li>Jasmine</li>
                             <li>HTML</li>
                             <li>CSS</li>
                             <li>LESS</li>
                             <li>PHP</li>
                             <li>Java</li>
+                            <li>Jasmine</li>
                         </ul>
                     </SideBySideSection>
                     <div className="App-experience" ref={(node) => this.setReference(node, "experience")}>
@@ -104,10 +99,11 @@ class App extends Component {
                             />
                         </div>
                     </div>
-                    <div className="App-contact">
+                    <div className="App-contact" ref={(node) => this.setReference(node, "contact")}>
+                        <h1>I have what it takes to be a great employee</h1>
+                        <p>I look to begin my career as a Front End Engineer from May 2017 and onwards.</p>
                         <a href="mailto:danieltsang94@gmail.com">
-                            <Glyphicon glyph="send" style={{fontSize: '30px', margin: "0 5px 0 0"}} />
-                            Contact me!
+                            Send me a message
                         </a>
                     </div>
                 </div>

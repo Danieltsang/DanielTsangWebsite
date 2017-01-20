@@ -36,19 +36,21 @@
     }
 }
 
-.App-header-right > h3 {
-    margin: 0 5px;
-    padding: 6px;
-    font-weight: 100;
-}
-
 .App-header-button {
     align-self: flex-end;
+    cursor: pointer;
+    color: #60918f;
+    font-size: 30px;
+    padding: 20px;
+    font-weight: 100;
+    margin: 0;
+    line-height: 30px;
+    outline: 0;
 }
 
-.App-header-button {
-    border-radius: 5px;
-    cursor: pointer;
+.App-header-button:hover {
+    color: #23527c;
+    text-decoration: underline;
 }
 
 .App-body {
@@ -72,9 +74,15 @@
     text-align: center;
 }
 
+.App-intro > .glyphicon:hover {
+    color: #23527c;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 .App-experience {
     display: flex;
-    margin: 0 0 20px 0;
+    margin: 60px 0;
 }
 
 .App-experience {
@@ -96,6 +104,16 @@
 .App-contact {
     display: flex;
     justify-content: center;
+    margin: 60px;
+    flex-direction: column;
+}
+
+.App-contact > p,
+.App-contact > h1 {
+    align-self: center;
+    text-align: center;
+    margin: 0;
+    padding: 0 0 35px 0;
 }
 
 .App-contact > a {
@@ -105,7 +123,8 @@
     background: #e0ebe8;
     font-size: 30px;
     padding: 20px;
-    margin: 0 0 20px 0;
+    margin: auto;
+    text-align: center;
 }
 
 /*@keyframes App-logo-spin {*/
