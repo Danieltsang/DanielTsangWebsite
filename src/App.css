@@ -58,7 +58,7 @@
     align-items: center;
     height: 637px;
     width: auto;
-    padding: 8% 0 0 0;
+    padding: 30px 0 0 0;
     display: flex;
     position: relative;
 }
@@ -87,7 +87,7 @@
 
 .App-experience {
     display: flex;
-    margin: 5% 0;
+    margin: 40px 0;
 }
 
 .App-experience {
@@ -110,7 +110,7 @@
 .App-contact {
     display: flex;
     justify-content: center;
-    margin: 5%;
+    margin: 40px;
     flex-direction: column;
 }
 

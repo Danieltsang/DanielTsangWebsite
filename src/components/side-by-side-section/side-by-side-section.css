@@ -1,8 +1,7 @@
 .SideBySideSection {
     display: flex;
-    margin: 5%;
+    margin: 40px;
 }
-
 
 .SideBySideSection:first-child {
 }
