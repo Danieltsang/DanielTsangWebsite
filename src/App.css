@@ -139,6 +139,12 @@
     border: 1px solid #acacac;
 }
 
+.App-footer {
+    background-color: #e0ebe8;
+    padding: 30px;
+    margin: 20px 0 0 0;
+}
+
 .row {
     display: flex;
     justify-content: center;
