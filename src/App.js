@@ -4,7 +4,7 @@ import { Glyphicon, ResponsiveEmbed } from 'react-bootstrap';
 import './App.css';
 
 import Experience from './components/experience/experience';
-import SideBySideSection from './components/side-by-side-section/side-by-side-section';
+import ContentSection from './components/content-section/content-section';
 
 import avatar from './images/avatar.jpg';
 import hootsuiteLogo from './images/hootsuitelogo.png';
@@ -72,11 +72,11 @@ class App extends Component {
     renderBody () {
         return (
             <div className="App-body">
-                <SideBySideSection title="Who Am I?" ref={(node) => this.setReference(node, "aboutMe")}>
+                <ContentSection title="Who Am I?" ref={(node) => this.setReference(node, "aboutMe")}>
                     <p className="about-me">Hi! My name is Daniel Tsang and I am an undergraduate at the University of British Columbia graduating in May 2017. Currently, I am searching for a job as a Front End Engineer in the Big Apple. The combination of the growing tech industry and my passion for coding has inspired me to kick off my career in New York. If you have advice or an opportunity available, I'd love the chance to chat with you!</p>
-                </SideBySideSection>
+                </ContentSection>
                 <div className="App-divider"></div>
-                <SideBySideSection
+                <ContentSection
                     title="Who Have I Worked For?"
                     ref={(node) => this.setReference(node, "experience")}
                     orientation="row"
@@ -99,9 +99,9 @@ class App extends Component {
                             title="Indochino"
                         />
                     </div>
-                </SideBySideSection>
+                </ContentSection>
                 <div className="App-divider"></div>
-                <SideBySideSection
+                <ContentSection
                     title="What Can I Do?"
                     ref={(node) => this.setReference(node, "skills")}
                     orientation="row"
@@ -115,9 +115,9 @@ class App extends Component {
                     <h3>&nbsp;PHP,</h3>
                     <h3>&nbsp;Java,</h3>
                     <h3>&nbsp;Jasmine</h3>
-                </SideBySideSection>
+                </ContentSection>
                 <div className="App-divider"></div>
-                <SideBySideSection title="What Do I Like?" ref={(node) => this.setReference(node, "skills")}>
+                <ContentSection title="What Do I Like?" ref={(node) => this.setReference(node, "skills")}>
                     <div className="row">
                         <div className="svg">
                             <ResponsiveEmbed a16by9>
@@ -158,7 +158,7 @@ class App extends Component {
                             Tia
                         </div>
                     </div>
-                </SideBySideSection>
+                </ContentSection>
                 <div className="App-divider"></div>
                 <div className="App-contact" ref={(node) => this.setReference(node, "contact")}>
                     <h1>Ready to Meet a Young but Experienced Front End Engineer?</h1>

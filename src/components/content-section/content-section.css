@@ -1,11 +1,11 @@
-.SideBySideSection {
+.ContentSection {
     display: flex;
     margin: 40px;
     flex-direction: column;
     align-items: center;
 }
 
-.SideBySideSection > h2 {
+.ContentSection > h2 {
     flex: 0 0 auto;
     text-align: center;
     font-weight: 100;
@@ -30,7 +30,7 @@
     /*}*/
 /*}*/
 
-.SideBySideSection-content {
+.ContentSection-content {
     display: flex;
     flex-wrap: wrap;
     flex: 2 1 auto;
@@ -41,15 +41,15 @@
     align-self: center;
 }
 
-.SideBySideSection-content > ul {
+.ContentSection-content > ul {
     padding: 0;
     list-style-type: none;
 }
 
-.SideBySideSection-content * {
+.ContentSection-content * {
     color: #454545;
 }
 
-.SideBySideSection-content > h3 {
+.ContentSection-content > h3 {
     margin: 0;
 }

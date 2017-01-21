@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import './side-by-side-section.css';
+import './content-section.css';
 
-class SideBySideSection extends Component {
+class ContentSection extends Component {
     render () {
         let styles = {
             flexDirection: this.props.orientation
         };
         return (
-            <div className="SideBySideSection">
+            <div className="ContentSection">
                 <h2>{this.props.title}</h2>
-                <div className="SideBySideSection-content" style={styles}>
+                <div className="ContentSection-content" style={styles}>
                     {this.props.children}
                 </div>
             </div>
@@ -17,14 +17,14 @@ class SideBySideSection extends Component {
     }
 }
 
-SideBySideSection.propTypes = {
+ContentSection.propTypes = {
     children: React.PropTypes.any.isRequired,
     title: React.PropTypes.string.isRequired,
     orientation: React.PropTypes.oneOf(['row', 'column'])
 };
 
-SideBySideSection.defaultProps = {
+ContentSection.defaultProps = {
     orientation: 'column'
 };
 
-export default SideBySideSection;
+export default ContentSection;
