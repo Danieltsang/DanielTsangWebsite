@@ -42,7 +42,7 @@ class App extends Component {
                     </div>
                 </div>
                 <div className="App-header-right">
-                    <a href="https://github.com/Danieltsang?tab=repositories" className="App-header-button">
+                    <a target="blank" href="https://github.com/Danieltsang?tab=repositories" className="App-header-button">
                         Work
                     </a>
                     <h3 className="App-header-button" onClick={this.scrollSectionIntoView.bind(this, "contact")}>
@@ -73,11 +73,14 @@ class App extends Component {
         return (
             <div className="App-body">
                 <SideBySideSection title="Who Am I?" ref={(node) => this.setReference(node, "aboutMe")}>
-                    <p>Hi! My name is Daniel Tsang and I am an undergraduate at the University of British Columbia graduating in May 2017. Currently, I am searching for a job as a Front End Engineer in the Big Apple. The combination of the growing tech industry and my passion for coding invigorates me to kickoff my career in New York. If you have some tips or an opportunity available, please feel free to contact me!</p>
+                    <p className="about-me">Hi! My name is Daniel Tsang and I am an undergraduate at the University of British Columbia graduating in May 2017. Currently, I am searching for a job as a Front End Engineer in the Big Apple. The combination of the growing tech industry and my passion for coding has inspired me to kick off my career in New York. If you have advice or an opportunity available, I'd love the chance to chat with you!</p>
                 </SideBySideSection>
                 <div className="App-divider"></div>
-                <div className="App-experience" ref={(node) => this.setReference(node, "experience")}>
-                    <h2>Who Have I Worked For?</h2>
+                <SideBySideSection
+                    title="Who Have I Worked For?"
+                    ref={(node) => this.setReference(node, "experience")}
+                    orientation="row"
+                >
                     <div className="App-experience-container">
                         <Experience
                             companyUrl="www.hootsuite.com"
@@ -96,22 +99,22 @@ class App extends Component {
                             title="Indochino"
                         />
                     </div>
-                </div>
+                </SideBySideSection>
                 <div className="App-divider"></div>
                 <SideBySideSection
                     title="What Can I Do?"
                     ref={(node) => this.setReference(node, "skills")}
                     orientation="row"
                 >
-                    <p>Javascript,</p>
-                    <p>React,</p>
-                    <p>jQuery,</p>
-                    <p>HTML,</p>
-                    <p>CSS,</p>
-                    <p>LESS,</p>
-                    <p>PHP,</p>
-                    <p>Java,</p>
-                    <p>Jasmine</p>
+                    <h3>Javascript,</h3>
+                    <h3>&nbsp;React,</h3>
+                    <h3>&nbsp;jQuery,</h3>
+                    <h3>&nbsp;HTML,</h3>
+                    <h3>&nbsp;CSS,</h3>
+                    <h3>&nbsp;LESS,</h3>
+                    <h3>&nbsp;PHP,</h3>
+                    <h3>&nbsp;Java,</h3>
+                    <h3>&nbsp;Jasmine</h3>
                 </SideBySideSection>
                 <div className="App-divider"></div>
                 <SideBySideSection title="What Do I Like?" ref={(node) => this.setReference(node, "skills")}>
@@ -158,10 +161,10 @@ class App extends Component {
                 </SideBySideSection>
                 <div className="App-divider"></div>
                 <div className="App-contact" ref={(node) => this.setReference(node, "contact")}>
-                    <h1>I have what it takes to be a great employee</h1>
-                    <p>I look to begin my career as a Front End Engineer from May 2017 and onwards.</p>
+                    <h1>Ready to Meet a Young but Experienced Front End Engineer?</h1>
+                    <p>Because I look forward to meeting you, and talking about opportunities starting May 2017.</p>
                     <a href="mailto:danieltsang94@gmail.com">
-                        Let's Connect
+                        Connect with Daniel
                     </a>
                 </div>
             </div>
@@ -172,13 +175,13 @@ class App extends Component {
         return (
             <div className="App-footer">
                 <div className="App-social-networks">
-                    <a href="https://ca.linkedin.com/in/daniel-tsang-36730a80">LinkedIn</a>
+                    <a target="blank" href="https://ca.linkedin.com/in/daniel-tsang-36730a80">LinkedIn</a>
                 </div>
                 <div className="App-icon-credits">
                     <p>Icon Credits:</p>
-                    <div>Icons made by <a href="http://www.flaticon.com/authors/papedesign" title="Papedesign">Papedesign</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
-                    <div>Icons made by <a href="http://www.flaticon.com/authors/madebyoliver" title="Madebyoliver">Madebyoliver</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
-                    <div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+                    <div>Icons made by <a target="blank" href="http://www.flaticon.com/authors/papedesign" title="Papedesign">Papedesign</a> from <a target="blank" href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a target="blank" href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC 3.0 BY</a></div>
+                    <div>Icons made by <a target="blank" href="http://www.flaticon.com/authors/madebyoliver" title="Madebyoliver">Madebyoliver</a> from <a target="blank" href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a target="blank" href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC 3.0 BY</a></div>
+                    <div>Icons made by <a target="blank" href="http://www.freepik.com" title="Freepik">Freepik</a> from <a target="blank" href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a target="blank" href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC 3.0 BY</a></div>
                 </div>
             </div>
         )

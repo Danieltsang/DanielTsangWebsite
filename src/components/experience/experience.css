@@ -1,8 +1,7 @@
 .Experience {
     flex: 1 1 354px;
-    border: 8px solid #ffffff;
-    margin: 0 5px;
-    max-width: 354px;
+    margin: 5px;
+    max-width: 250px;
     width: 100%;
 }
 

@@ -14,7 +14,6 @@ class Experience extends Component {
               <p className="Experience-location">{this.props.location}</p>
               <p className="Experience-duration">{this.props.duration}</p>
               <p className="Experience-position">{this.props.position}</p>
-              <p className="Experience-description">{this.props.description}</p>
           </div>
         );
     }

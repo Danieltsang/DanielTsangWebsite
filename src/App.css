@@ -84,26 +84,12 @@
     padding: 10px;
 }
 
-.App-experience {
-    display: flex;
-    margin: 40px 0;
-}
-
-.App-experience {
-    flex-direction: column;
-}
-
-.App-experience > h2 {
-    text-align: center;
-    font-weight: 100;
-    margin: 0;
-}
-
 .App-experience-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    width: 100%;
 }
 
 .App-contact {
@@ -180,8 +166,3 @@
     height: auto;
     text-align: center;
 }
-
-/*@keyframes App-logo-spin {*/
-  /*from { transform: rotate(0deg); }*/
-  /*to { transform: rotate(360deg); }*/
-/*}*/
