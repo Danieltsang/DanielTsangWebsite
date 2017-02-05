@@ -9,6 +9,7 @@ import ContentSection from './components/content-section/content-section';
 import avatar from './images/avatar.jpg';
 import hootsuiteLogo from './images/hootsuitelogo.png';
 import indochinoLogo from './images/indochinologo.png';
+import resume from './assets/DanielTsangResume.pdf';
 
 import bowling from './images/bowling.svg';
 import bulldog from './images/french-bulldog.svg';
@@ -42,7 +43,10 @@ class App extends Component {
                     </div>
                 </div>
                 <div className="App-header-right">
-                    <a target="blank" href="https://github.com/Danieltsang?tab=repositories" className="App-header-button">
+                    <a className="App-header-button" href={resume} download="DanielTsangResume">
+                        Resume
+                    </a>
+                    <a className="App-header-button" target="blank" href="https://github.com/Danieltsang?tab=repositories">
                         Work
                     </a>
                     <h3 className="App-header-button" onClick={this.scrollSectionIntoView.bind(this, "contact")}>
