@@ -10,6 +10,7 @@ import avatar from './images/avatar.jpg';
 import hootsuiteLogo from './images/hootsuitelogo.png';
 import indochinoLogo from './images/indochinologo.png';
 import resume from './assets/DanielTsangResume.pdf';
+import nowPlaying from './images/nowplaying-screenshot.png';
 
 import bowling from './images/bowling.svg';
 import bulldog from './images/french-bulldog.svg';
@@ -26,7 +27,7 @@ class App extends Component {
     }
 
     scrollSectionIntoView (nodeName) {
-        var domNode = ReactDOM.findDOMNode(this[nodeName]);
+        let domNode = ReactDOM.findDOMNode(this[nodeName]);
         domNode.scrollIntoView();
     }
 
@@ -73,11 +74,12 @@ class App extends Component {
         );
     }
 
+    // @TODO Create component for image container class
     renderBody () {
         return (
             <div className="App-body">
                 <ContentSection title="Who Am I?" ref={(node) => this.setReference(node, "aboutMe")}>
-                    <p className="about-me">Hi! My name is Daniel Tsang and I am an undergraduate at the University of British Columbia graduating in May 2017. Currently, I am searching for a job as a Front End Engineer in the Big Apple. The combination of the growing tech industry and my passion for coding has inspired me to kick off my career in New York. If you have advice or an opportunity available, I'd love the chance to chat with you!</p>
+                    <p className="about-me">Hi! My name is Daniel Tsang and I am an undergraduate at the University of British Columbia graduating in May 2017. Currently, I am searching for a job as a Front End Engineer in the Big Apple. The combination of the growing tech industry and my passion for coding has inspired me to kick off my career in New York. If you have advice or an opportunity available, I'd love the chance to <a href="mailto:danieltsang94@gmail.com">chat</a> with you!</p>
                 </ContentSection>
                 <div className="App-divider"></div>
                 <ContentSection
@@ -102,6 +104,19 @@ class App extends Component {
                             position="Co-op Full Stack Engineer"
                             title="Indochino"
                         />
+                    </div>
+                </ContentSection>
+                <div className="App-divider"></div>
+                <ContentSection
+                    title="What Have I Built?"
+                    ref={(node) => this.setReference(node, "projects")}
+                    orientation="row"
+                >
+                    <div className="App-project">
+                        <h3><a href="https://danieltsang.github.io/ShowcaseMovieApp">Now Playing - Mobile First Movie Listing Application</a></h3>
+                        <div className="App-image-container">
+                            <img src={nowPlaying} alt={"Now Playing"}/>
+                        </div>
                     </div>
                 </ContentSection>
                 <div className="App-divider"></div>
