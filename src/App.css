@@ -144,6 +144,7 @@
 
 .App-social-networks > a {
     color: #60918f;
+    margin: 0 5px;
 }
 
 .App-social-networks > a:hover {

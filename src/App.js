@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Glyphicon, ResponsiveEmbed } from 'react-bootstrap';
+import Chart from 'chart.js'
 import './App.css';
 
 import Experience from './components/experience/experience';
@@ -20,10 +21,57 @@ import soccer from './images/soccer-ball-variant.svg';
 import watermelon from './images/watermelon.svg';
 
 class App extends Component {
-    constructor() {
-        super();
-
-        this.scrollSectionIntoView = this.scrollSectionIntoView.bind(this);
+    componentDidMount() {
+        let ctx = document.getElementById("mySkillsChart");
+        (() => {
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ["Javascript", "React", "jQuery", "HTML", "CSS", "PHP", "Java"],
+                    datasets: [{
+                        data: [2, 1, 1.5, 2, 2, 1.5, 0.5],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)',
+                            'rgba(132, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255,99,132,1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)',
+                            'rgba(132, 159, 64, 1)'
+                        ],
+                        borderWidth: 1,
+                        hoverBackgroundColor: 'rgba(0, 0, 0, 0.4)',
+                        hoverBorderColor: 'rgba(255, 255, 255, 1)'
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Years Experience',
+                                fontSize: 16
+                            },
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    },
+                    legend: {
+                        display: false
+                    }
+                }
+            });
+        })()
     }
 
     scrollSectionIntoView (nodeName) {
@@ -61,7 +109,8 @@ class App extends Component {
     renderIntro () {
         const glyphiconStyles = {
             fontSize: "30px",
-            margin: "0 8px 0 0"
+            margin: "0 8px 0 0",
+            cursor: "pointer"
         };
         return (
             <div className="App-intro">
@@ -69,6 +118,7 @@ class App extends Component {
                 <Glyphicon
                     glyph="menu-down"
                     style={glyphiconStyles}
+                    onClick={this.scrollSectionIntoView.bind(this, "aboutMe")}
                 />
             </div>
         );
@@ -79,7 +129,8 @@ class App extends Component {
         return (
             <div className="App-body">
                 <ContentSection title="Who Am I?" ref={(node) => this.setReference(node, "aboutMe")}>
-                    <p className="about-me">Hi! My name is Daniel Tsang and I am an undergraduate at the University of British Columbia graduating in May 2017. Currently, I am searching for a job as a Front End Engineer in the Big Apple. The combination of the growing tech industry and my passion for coding has inspired me to kick off my career in New York. If you have advice or an opportunity available, I'd love the chance to <a href="mailto:danieltsang94@gmail.com">chat</a> with you!</p>
+                    <p className="about-me">Hi! My name is Daniel Tsang and I am an undergraduate at the University of British Columbia graduating in May 2017. Currently, I am searching for a job as a Front End Engineer in the Big Apple. I want to find a company that provides mentorship, boasts a learning environment, and most importantly treats their employees equally.</p>
+                    <p className="about-me">If you think I'm a good fit for your company or know of someone who might, I'd love the chance to <a href="mailto:danieltsang94@gmail.com">chat</a> with you!</p>
                 </ContentSection>
                 <div className="App-divider"></div>
                 <ContentSection
@@ -125,15 +176,7 @@ class App extends Component {
                     ref={(node) => this.setReference(node, "skills")}
                     orientation="row"
                 >
-                    <h3>Javascript,</h3>
-                    <h3>&nbsp;React,</h3>
-                    <h3>&nbsp;jQuery,</h3>
-                    <h3>&nbsp;HTML,</h3>
-                    <h3>&nbsp;CSS,</h3>
-                    <h3>&nbsp;LESS,</h3>
-                    <h3>&nbsp;PHP,</h3>
-                    <h3>&nbsp;Java,</h3>
-                    <h3>&nbsp;Jasmine</h3>
+                    <canvas id="mySkillsChart" width="400" height="200"></canvas>
                 </ContentSection>
                 <div className="App-divider"></div>
                 <ContentSection title="What Do I Like?" ref={(node) => this.setReference(node, "skills")}>
@@ -195,6 +238,7 @@ class App extends Component {
             <div className="App-footer">
                 <div className="App-social-networks">
                     <a target="blank" href="https://ca.linkedin.com/in/daniel-tsang-36730a80">LinkedIn</a>
+                    <a target="blank" href="https://github.com/Danieltsang">GitHub</a>
                 </div>
                 <div className="App-icon-credits">
                     <p>Icon Credits:</p>
