@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import _ from 'underscore';
 import { Glyphicon, ResponsiveEmbed } from 'react-bootstrap';
 import Chart from 'chart.js'
 import './App.css';
+
+import Constants from './constants';
 
 import Experience from './components/experience/experience';
 import ContentSection from './components/content-section/content-section';
@@ -21,57 +24,68 @@ import soccer from './images/soccer-ball-variant.svg';
 import watermelon from './images/watermelon.svg';
 
 class App extends Component {
-    componentDidMount() {
-        let ctx = document.getElementById("mySkillsChart");
-        (() => {
-            new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: ["Javascript", "React", "jQuery", "HTML", "CSS", "PHP", "Java"],
-                    datasets: [{
-                        data: [2, 1, 1.5, 2, 2, 1.5, 0.5],
-                        backgroundColor: [
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 206, 86, 0.2)',
-                            'rgba(75, 192, 192, 0.2)',
-                            'rgba(153, 102, 255, 0.2)',
-                            'rgba(255, 159, 64, 0.2)',
-                            'rgba(132, 159, 64, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(255,99,132,1)',
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(255, 206, 86, 1)',
-                            'rgba(75, 192, 192, 1)',
-                            'rgba(153, 102, 255, 1)',
-                            'rgba(255, 159, 64, 1)',
-                            'rgba(132, 159, 64, 1)'
-                        ],
-                        borderWidth: 1,
-                        hoverBackgroundColor: 'rgba(0, 0, 0, 0.4)',
-                        hoverBorderColor: 'rgba(255, 255, 255, 1)'
-                    }]
-                },
-                options: {
-                    scales: {
-                        yAxes: [{
-                            scaleLabel: {
-                                display: true,
-                                labelString: 'Years Experience',
-                                fontSize: 16
-                            },
-                            ticks: {
-                                beginAtZero: true
-                            }
-                        }]
-                    },
-                    legend: {
-                        display: false
-                    }
-                }
+    constructor () {
+        super();
+
+        this.state = {
+            skillsGraphInView: false
+        };
+
+        this.mySkillsGraph = null;
+
+        this.scrollHandler = _.throttle(this.scrollHandler.bind(this), 100);
+    }
+
+    componentDidMount () {
+        this.chart = new Chart(document.getElementById("mySkillsChart"), Object.assign({}, Constants.skillsChart));
+        window.addEventListener("scroll", this.scrollHandler);
+    }
+
+    componentWillUnmount () {
+        window.removeEventListener("scroll", this.scrollHandler);
+    }
+
+    scrollHandler () {
+        if (this.isContentInView(this['mySkillsGraph'], true)) {
+            if (this.state.skillsGraphInView) {
+                // Content is still in view
+                return;
+            }
+            // Content is in view
+            this.setState({skillsGraphInView: true});
+            this.chart.data.datasets[0].data.forEach((value, index) => {
+                this.chart.data.datasets[0].data[index] = Constants.initialSkillsChartData[index];
             });
-        })()
+            this.chart.update();
+        } else {
+            if (this.isContentInView(this['mySkillsGraph'], false)) {
+                // Content is partially in view
+            } else {
+                // Content is not in view
+                if (this.state.skillsGraphInView) {
+                    this.chart.data.datasets[0].data.forEach((value, index) => {
+                        this.chart.data.datasets[0].data[index] = 0;
+                    });
+                    this.chart.update();
+                    this.setState({skillsGraphInView: false});
+                }
+            }
+        }
+    }
+
+    isContentInView (node, fullyInView) {
+        let pageTop = document.documentElement.scrollTop || document.body.scrollTop;
+        let pageBottom = pageTop + window.innerHeight
+            || document.documentElement.clientHeight
+            || document.body.clientHeight;
+        let elementTop = node.offsetTop;
+        let elementBottom = elementTop + node.offsetHeight;
+
+        if (fullyInView === true) {
+            return ((pageTop < elementTop) && (pageBottom > elementBottom));
+        } else {
+            return ((elementTop <= pageBottom) && (elementBottom >= pageTop));
+        }
     }
 
     scrollSectionIntoView (nodeName) {
@@ -176,7 +190,7 @@ class App extends Component {
                     ref={(node) => this.setReference(node, "skills")}
                     orientation="row"
                 >
-                    <canvas id="mySkillsChart" width="400" height="200"></canvas>
+                    <canvas ref={(node) => this.setReference(node, "mySkillsGraph")} id="mySkillsChart" width="400" height="200"></canvas>
                 </ContentSection>
                 <div className="App-divider"></div>
                 <ContentSection title="What Do I Like?" ref={(node) => this.setReference(node, "skills")}>
