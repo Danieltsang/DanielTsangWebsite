@@ -28,7 +28,7 @@ class App extends Component {
         super();
 
         this.state = {
-            skillsGraphInView: false
+            skillsGraphInView: true
         };
 
         this.mySkillsGraph = null;
@@ -52,6 +52,7 @@ class App extends Component {
                 return;
             }
             // Content is in view
+            console.log("in view");
             this.setState({skillsGraphInView: true});
             this.chart.data.datasets[0].data.forEach((value, index) => {
                 this.chart.data.datasets[0].data[index] = Constants.initialSkillsChartData[index];
@@ -60,8 +61,10 @@ class App extends Component {
         } else {
             if (this.isContentInView(this['mySkillsGraph'], false)) {
                 // Content is partially in view
+                console.log("partially in view");
             } else {
                 // Content is not in view
+                console.log("not in view");
                 if (this.state.skillsGraphInView) {
                     this.chart.data.datasets[0].data.forEach((value, index) => {
                         this.chart.data.datasets[0].data[index] = 0;
