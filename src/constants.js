@@ -33,7 +33,7 @@ const Constants = {
                 yAxes: [{
                     scaleLabel: {
                         display: true,
-                        labelString: 'Years Experience',
+                        labelString: 'Years',
                         fontSize: 16
                     },
                     ticks: {
