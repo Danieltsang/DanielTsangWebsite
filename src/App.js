@@ -10,7 +10,7 @@ import Constants from './constants';
 import Experience from './components/experience/experience';
 import ContentSection from './components/content-section/content-section';
 
-import avatar from './images/avatar.jpg';
+import avatar from './images/8bitavatar.png';
 import hootsuiteLogo from './images/hootsuitelogo.png';
 import indochinoLogo from './images/indochinologo.png';
 import resume from './assets/DanielTsangResume.pdf';
@@ -52,7 +52,6 @@ class App extends Component {
                 return;
             }
             // Content is in view
-            console.log("in view");
             this.setState({skillsGraphInView: true});
             this.chart.data.datasets[0].data.forEach((value, index) => {
                 this.chart.data.datasets[0].data[index] = Constants.initialSkillsChartData[index];
@@ -61,13 +60,11 @@ class App extends Component {
         } else {
             if (this.isContentInView(this['mySkillsGraph'], false)) {
                 // Content is partially in view
-                console.log("partially in view");
             } else {
                 // Content is not in view
-                console.log("not in view");
                 if (this.state.skillsGraphInView) {
                     this.chart.data.datasets[0].data.forEach((value, index) => {
-                        this.chart.data.datasets[0].data[index] = 0;
+                        this.chart.data.datasets[0].data[index] = "";
                     });
                     this.chart.update();
                     this.setState({skillsGraphInView: false});
@@ -85,7 +82,7 @@ class App extends Component {
         let elementBottom = elementTop + node.offsetHeight;
 
         if (fullyInView === true) {
-            return ((pageTop < elementTop) && (pageBottom > elementBottom));
+            return ((pageTop < elementTop + 110) && (pageBottom > elementBottom - 110));
         } else {
             return ((elementTop <= pageBottom) && (elementBottom >= pageTop));
         }
@@ -193,7 +190,7 @@ class App extends Component {
                     ref={(node) => this.setReference(node, "skills")}
                     orientation="row"
                 >
-                    <canvas ref={(node) => this.setReference(node, "mySkillsGraph")} id="mySkillsChart" width="400" height="200"></canvas>
+                    <canvas ref={(node) => this.setReference(node, "mySkillsGraph")} className="App-skills-chart" id="mySkillsChart" width="300" height="200"></canvas>
                 </ContentSection>
                 <div className="App-divider"></div>
                 <ContentSection title="What Do I Like?" ref={(node) => this.setReference(node, "skills")}>
