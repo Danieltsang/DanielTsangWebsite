@@ -81,12 +81,38 @@
     z-index: -1;
 }
 
-.App-intro > h1 {
+.App-intro h1 {
     font-size: 70px;
     font-weight: 100;
     text-align: center;
     padding: 10px;
 }
+
+/* React Animations */
+.App-intro-hi-animation-appear {
+    opacity: 0;
+    transform: translateY(-100px);
+}
+
+.App-intro-hi-animation-appear.App-intro-hi-animation-appear-active {
+    opacity: 1;
+    transform: translateY(0px);
+    transition-timing-function: ease;
+    transition: 1s 0.5s;
+}
+
+.App-intro-glyph-animation-appear {
+    opacity: 0;
+    transform: translateY(300px);
+}
+
+.App-intro-glyph-animation-appear.App-intro-glyph-animation-appear-active {
+    opacity: 1;
+    transform: translateY(0px);
+    transition-timing-function: ease;
+    transition: 1s 0.5s;
+}
+/*                  */
 
 .App-experience-container {
     display: flex;

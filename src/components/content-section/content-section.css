@@ -5,30 +5,32 @@
     align-items: center;
 }
 
-.ContentSection > h2 {
+.ContentSection h2 {
     flex: 0 0 auto;
     text-align: center;
     font-weight: 100;
     margin: 0 20px 20px 20px;
 }
 
-/* Add back if I want different views based on mobile or non-mobile */
-/*@media (min-width: 769px) {*/
-    /*.SideBySideSection > h2 {*/
-        /*margin: 0 20px 20px 20px;*/
-        /*max-width: 250px;*/
-        /*width: 100%;*/
-    /*}*/
-/*}*/
+/* React Animations */
+.ContentSection-title-enter {
+    opacity: 0.1;
+}
 
-/*@media (max-width: 768px) {*/
-    /*.SideBySideSection {*/
-        /*flex-direction: column;*/
-    /*}*/
-    /*.SideBySideSection > h2 {*/
-        /*margin: 0 20px 20px 20px;*/
-    /*}*/
-/*}*/
+.ContentSection-title-enter.ContentSection-title-enter-active {
+    opacity: 1;
+    transition: opacity .5s ease-in;
+}
+
+.ContentSection-title-leave {
+    opacity: 0.1;
+}
+
+.ContentSection-title-leave.ContentSection-title-leave-active {
+    opacity: 1;
+    transition: opacity .3s ease-in;
+}
+/*                  */
 
 .ContentSection-content {
     display: flex;

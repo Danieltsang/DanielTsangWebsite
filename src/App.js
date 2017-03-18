@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import _ from 'underscore';
 import { Glyphicon, ResponsiveEmbed } from 'react-bootstrap';
 import Chart from 'chart.js'
+
 import './App.css';
 
 import Constants from './constants';
@@ -128,12 +130,26 @@ class App extends Component {
         };
         return (
             <div className="App-intro">
-                <h1>Hi, I'm Daniel</h1>
-                <Glyphicon
-                    glyph="menu-down"
-                    style={glyphiconStyles}
-                    onClick={this.scrollSectionIntoView.bind(this, "aboutMe")}
-                />
+                <ReactCSSTransitionGroup
+                    transitionName="App-intro-hi-animation"
+                    transitionAppear={true}
+                    transitionAppearTimeout={1700}
+                    transitionEnter={false}
+                    transitionLeave={false}>
+                    <h1 key="hi-animation">Hi, I'm Daniel</h1>
+                </ReactCSSTransitionGroup>
+                <ReactCSSTransitionGroup
+                    transitionName="App-intro-glyph-animation"
+                    transitionAppear={true}
+                    transitionAppearTimeout={1700}
+                    transitionEnter={false}
+                    transitionLeave={false}>
+                    <Glyphicon
+                        key="glyph-animation"
+                        glyph="menu-down"
+                        style={glyphiconStyles}
+                        onClick={this.scrollSectionIntoView.bind(this, "aboutMe")}/>
+                </ReactCSSTransitionGroup>
             </div>
         );
     }
@@ -142,7 +158,9 @@ class App extends Component {
     renderBody () {
         return (
             <div className="App-body">
-                <ContentSection title="Who Am I?" ref={(node) => this.setReference(node, "aboutMe")}>
+                <ContentSection
+                    title="Who Am I?"
+                    ref={(node) => this.setReference(node, "aboutMe")}>
                     <p className="about-me">Hi! My name is Daniel Tsang and I am an undergraduate at the University of British Columbia graduating in May 2017. Currently, I am searching for a job as a Front End Engineer in the Big Apple. I want to find a company that provides mentorship, boasts a learning environment, and most importantly treats their employees equally.</p>
                     <p className="about-me">If you think I'm a good fit for your company or know of someone who might, I'd love the chance to <a href="mailto:danieltsang94@gmail.com">chat</a> with you!</p>
                 </ContentSection>
@@ -150,8 +168,7 @@ class App extends Component {
                 <ContentSection
                     title="Who Have I Worked For?"
                     ref={(node) => this.setReference(node, "experience")}
-                    orientation="row"
-                >
+                    orientation="row">
                     <div className="App-experience-container">
                         <Experience
                             companyUrl="www.hootsuite.com"
@@ -159,24 +176,21 @@ class App extends Component {
                             imageSrc={hootsuiteLogo}
                             position="Co-op Software Developer"
                             location="Vancouver, BC, Canada"
-                            title="Hootsuite"
-                        />
+                            title="Hootsuite"/>
                         <Experience
                             companyUrl="www.indochino.com"
                             duration="January 2015 - August 2015"
                             imageSrc={indochinoLogo}
                             location="Vancouver, BC, Canada"
                             position="Co-op Full Stack Engineer"
-                            title="Indochino"
-                        />
+                            title="Indochino"/>
                     </div>
                 </ContentSection>
                 <div className="App-divider"></div>
                 <ContentSection
                     title="What Have I Built?"
                     ref={(node) => this.setReference(node, "projects")}
-                    orientation="row"
-                >
+                    orientation="row">
                     <div className="App-project">
                         <h3><a href="https://danieltsang.github.io/ShowcaseMovieApp">Now Playing - Mobile First Movie Listing Application</a></h3>
                         <div className="App-image-container">
@@ -188,8 +202,7 @@ class App extends Component {
                 <ContentSection
                     title="What Can I Do?"
                     ref={(node) => this.setReference(node, "skills")}
-                    orientation="row"
-                >
+                    orientation="row">
                     <canvas ref={(node) => this.setReference(node, "mySkillsGraph")} className="App-skills-chart" id="mySkillsChart" width="300" height="200"></canvas>
                 </ContentSection>
                 <div className="App-divider"></div>
@@ -237,8 +250,8 @@ class App extends Component {
                 </ContentSection>
                 <div className="App-divider"></div>
                 <div className="App-contact" ref={(node) => this.setReference(node, "contact")}>
-                    <h1>Ready to Meet a Young but Experienced Front End Engineer?</h1>
-                    <p>Because I look forward to meeting you, and talking about opportunities starting May 2017.</p>
+                    <h1>Ready to Meet a Young and Experienced Front End Engineer?</h1>
+                    <p>Because I look forward to meeting you, and talking about opportunities starting June 2017.</p>
                     <a href="mailto:danieltsang94@gmail.com">
                         Connect with Daniel
                     </a>
