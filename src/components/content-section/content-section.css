@@ -13,22 +13,15 @@
 }
 
 /* React Animations */
-.ContentSection-title-enter {
-    opacity: 0.1;
+.ContentSection-title {
+    opacity: 0;
+    transform: translateX(-200px);
+    transition: 1s 0.3s;
 }
 
-.ContentSection-title-enter.ContentSection-title-enter-active {
+.ContentSection-title.in-view {
     opacity: 1;
-    transition: opacity .5s ease-in;
-}
-
-.ContentSection-title-leave {
-    opacity: 0.1;
-}
-
-.ContentSection-title-leave.ContentSection-title-leave-active {
-    opacity: 1;
-    transition: opacity .3s ease-in;
+    transform: translateX(0px);
 }
 /*                  */
 

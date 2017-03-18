@@ -30,9 +30,17 @@ class App extends Component {
         super();
 
         this.state = {
-            skillsGraphInView: true
+            skillsGraphInView: true,
+            inView: {
+                aboutMe: false,
+                experience: false,
+                projects: false,
+                skills: false,
+                hobbies: false
+            }
         };
 
+        this.nodes = {};
         this.mySkillsGraph = null;
 
         this.scrollHandler = _.throttle(this.scrollHandler.bind(this), 100);
@@ -48,7 +56,18 @@ class App extends Component {
     }
 
     scrollHandler () {
-        if (this.isContentInView(this['mySkillsGraph'], true)) {
+        let titlesInView = {};
+        ["aboutMe", "experience", "projects", "skills", "hobbies"].forEach(node => {
+            titlesInView[node] = this.isContentInView(ReactDOM.findDOMNode(this.nodes[node]), false);
+        });
+
+        if (!_.isEqual(this.state.inView, titlesInView)) {
+            this.setState({
+                inView: {...this.state.inView, ...titlesInView}
+            });
+        }
+
+        if (this.isContentInView(this.nodes['mySkillsGraph'], true)) {
             if (this.state.skillsGraphInView) {
                 // Content is still in view
                 return;
@@ -60,7 +79,7 @@ class App extends Component {
             });
             this.chart.update();
         } else {
-            if (this.isContentInView(this['mySkillsGraph'], false)) {
+            if (this.isContentInView(this.nodes['mySkillsGraph'], false)) {
                 // Content is partially in view
             } else {
                 // Content is not in view
@@ -91,12 +110,12 @@ class App extends Component {
     }
 
     scrollSectionIntoView (nodeName) {
-        let domNode = ReactDOM.findDOMNode(this[nodeName]);
+        let domNode = ReactDOM.findDOMNode(this.nodes[nodeName]);
         domNode.scrollIntoView();
     }
 
     setReference (node, nodeName) {
-        this[nodeName] = node;
+        this.nodes[nodeName] = node;
     }
 
     renderHeader () {
@@ -160,6 +179,7 @@ class App extends Component {
             <div className="App-body">
                 <ContentSection
                     title="Who Am I?"
+                    titleInView={this.state.inView['aboutMe']}
                     ref={(node) => this.setReference(node, "aboutMe")}>
                     <p className="about-me">Hi! My name is Daniel Tsang and I am an undergraduate at the University of British Columbia graduating in May 2017. Currently, I am searching for a job as a Front End Engineer in the Big Apple. I want to find a company that provides mentorship, boasts a learning environment, and most importantly treats their employees equally.</p>
                     <p className="about-me">If you think I'm a good fit for your company or know of someone who might, I'd love the chance to <a href="mailto:danieltsang94@gmail.com">chat</a> with you!</p>
@@ -167,6 +187,7 @@ class App extends Component {
                 <div className="App-divider"></div>
                 <ContentSection
                     title="Who Have I Worked For?"
+                    titleInView={this.state.inView['experience']}
                     ref={(node) => this.setReference(node, "experience")}
                     orientation="row">
                     <div className="App-experience-container">
@@ -189,6 +210,7 @@ class App extends Component {
                 <div className="App-divider"></div>
                 <ContentSection
                     title="What Have I Built?"
+                    titleInView={this.state.inView['projects']}
                     ref={(node) => this.setReference(node, "projects")}
                     orientation="row">
                     <div className="App-project">
@@ -201,12 +223,16 @@ class App extends Component {
                 <div className="App-divider"></div>
                 <ContentSection
                     title="What Can I Do?"
+                    titleInView={this.state.inView['skills']}
                     ref={(node) => this.setReference(node, "skills")}
                     orientation="row">
                     <canvas ref={(node) => this.setReference(node, "mySkillsGraph")} className="App-skills-chart" id="mySkillsChart" width="300" height="200"></canvas>
                 </ContentSection>
                 <div className="App-divider"></div>
-                <ContentSection title="What Do I Like?" ref={(node) => this.setReference(node, "skills")}>
+                <ContentSection
+                    title="What Do I Like?"
+                    titleInView={this.state.inView['hobbies']}
+                    ref={(node) => this.setReference(node, "hobbies")}>
                     <div className="row">
                         <div className="svg">
                             <ResponsiveEmbed a16by9>

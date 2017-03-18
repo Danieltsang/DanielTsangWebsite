@@ -1,28 +1,16 @@
 import React, { Component } from 'react';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 import './content-section.css';
 
 class ContentSection extends Component {
-    renderTitle () {
-        if (!this.props.titleInView) {
-            return;
-        }
-        return <h2>{this.props.title}</h2>;
-    }
-
     render () {
         let styles = {
             flexDirection: this.props.orientation
         };
+        let inView = this.props.titleInView ? "in-view" : "";
         return (
             <div className="ContentSection">
-                <ReactCSSTransitionGroup
-                    transitionName="ContentSection-title"
-                    transitionEnterTimeout={500}
-                    transitionLeaveTimeout={300}>
-                    {this.renderTitle()}
-                </ReactCSSTransitionGroup>
+                <h2 className={"ContentSection-title " + inView}>{this.props.title}</h2>
                 <div className="ContentSection-content" style={styles}>
                     {this.props.children}
                 </div>
