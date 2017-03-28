@@ -149,6 +149,10 @@
     text-align: center;
 }
 
+.App-contact > a:hover {
+    text-decoration: none;
+}
+
 .App-divider {
     margin: 0 5%;
     max-width: 100%;
@@ -186,9 +190,53 @@
     color: rgba(128, 128, 128, 0.31);
 }
 
+.App-project {
+    margin: 5px 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    transition: all 0.5s ease;
+}
+
+.App-project:hover {
+    transform: scale(1.1);
+    box-shadow: none;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
 .App-project > h3 {
     text-align: center;
     text-decoration: underline;
+}
+
+.App-image-container {
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+@media (max-width: 350px) {
+    .App-image-container {
+        height: 150px;
+    }
+}
+
+@media (min-width: 375px) {
+    .App-image-container {
+        height: 175px;
+    }
+}
+
+@media (min-width: 768px) {
+    .App-image-container {
+        height: 200px;
+    }
+}
+
+.App-image-container img {
+    max-width: 350px;
+    width: 100%;
+    height: 100%;
 }
 
 .row {
@@ -201,25 +249,4 @@
     width: 150px;
     height: auto;
     text-align: center;
-}
-
-.App-image-container {
-    height: 400px;
-    width: 100%;
-    position: relative;
-}
-
-/*.App-image-container:hover {*/
-    /*cursor: pointer;*/
-/*}*/
-
-.App-image-container img {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    margin: auto;
-    max-height: 100%;
-    max-width: 100%;
 }

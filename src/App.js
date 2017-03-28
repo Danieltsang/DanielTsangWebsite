@@ -16,7 +16,9 @@ import avatar from './images/8bitavatar.png';
 import hootsuiteLogo from './images/hootsuitelogo.png';
 import indochinoLogo from './images/indochinologo.png';
 import resume from './assets/DanielTsangResume.pdf';
-import nowPlaying from './images/nowplaying-screenshot.png';
+
+import nowPlaying from './images/nowplaying-rect.png';
+import honeyBuns from './images/honeybuns-rect.png';
 
 import bowling from './images/bowling.svg';
 import bulldog from './images/french-bulldog.svg';
@@ -214,9 +216,17 @@ class App extends Component {
                     ref={(node) => this.setReference(node, "projects")}
                     orientation="row">
                     <div className="App-project">
-                        <h3><a href="https://danieltsang.github.io/ShowcaseMovieApp">Now Playing - Mobile First Movie Listing Application</a></h3>
                         <div className="App-image-container">
-                            <img src={nowPlaying} alt={"Now Playing"}/>
+                            <a href="https://danieltsang.github.io/ShowcaseMovieApp" target="_blank">
+                                <img src={nowPlaying} alt={"Now Playing"}/>
+                            </a>
+                        </div>
+                    </div>
+                    <div className="App-project">
+                        <div className="App-image-container">
+                            <a href="https://danieltsang.github.io/honeybuns" target="_blank">
+                                <img src={honeyBuns} alt={"Honey Buns"}/>
+                            </a>
                         </div>
                     </div>
                 </ContentSection>
