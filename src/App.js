@@ -50,6 +50,7 @@ class App extends Component {
 
     componentDidMount () {
         this.chart = new Chart(document.getElementById("mySkillsChart"), Object.assign({}, Constants.skillsChart));
+        this.scrollHandler();
         window.addEventListener("scroll", this.scrollHandler);
     }
 
