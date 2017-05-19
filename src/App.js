@@ -150,6 +150,7 @@ class App extends Component {
             margin: "0 8px 0 0",
             cursor: "pointer"
         };
+        let helloText = "Hi, I'm Daniel";
         return (
             <div className="App-intro">
                 <ReactCSSTransitionGroup
@@ -158,7 +159,7 @@ class App extends Component {
                     transitionAppearTimeout={1700}
                     transitionEnter={false}
                     transitionLeave={false}>
-                    <h1 key="hi-animation">Hi, I'm Daniel</h1>
+                    <h1 key="hi-animation">{helloText}</h1>
                 </ReactCSSTransitionGroup>
                 <ReactCSSTransitionGroup
                     transitionName="App-intro-glyph-animation"
@@ -184,8 +185,8 @@ class App extends Component {
                     title="Who Am I?"
                     titleInView={this.state.inView['aboutMe']}
                     ref={(node) => this.setReference(node, "aboutMe")}>
-                    <p className="about-me">Hi! My name is Daniel Tsang and I am an undergraduate at the University of British Columbia graduating in May 2017. Currently, I am searching for a job as a Front End Engineer in the Big Apple. I want to find a company that provides mentorship, boasts a learning environment, and most importantly treats their employees equally.</p>
-                    <p className="about-me">If you think I'm a good fit for your company or know of someone who might, I'd love the chance to <a href="mailto:danieltsang94@gmail.com">chat</a> with you!</p>
+                    <p className="about-me">Hi! My name is Daniel Tsang and I am an undergraduate at the University of British Columbia graduating in May 2017. Currently, I am searching for a job as a Front End Engineer. I want to find a company that provides mentorship, boasts a learning environment, and most importantly treats their employees equally.</p>
+                    <p className="about-me">If you think I am a good fit for your company or know of someone who might, I would love the chance to <a href="mailto:danieltsang94@gmail.com">chat</a> with you!</p>
                 </ContentSection>
                 <div className="App-divider"></div>
                 <ContentSection
