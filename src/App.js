@@ -130,9 +130,6 @@ class App extends Component {
                     </div>
                 </div>
                 <div className="App-header-right">
-                    <a className="App-header-button" href={resume} download="DanielTsangResume">
-                        Resume
-                    </a>
                     <a className="App-header-button" target="blank" href="https://github.com/Danieltsang?tab=repositories">
                         Work
                     </a>
